@@ -1,4 +1,5 @@
 policy "gcp" {
+  doc = file("README.md")
   configuration {
     provider "gcp" {
       version = ">= 0.4.0"

@@ -7,6 +7,6 @@ policy "gcp" {
   }
 
   policy "cis_v1.2.0" {
-      source = file("cis_v1.2.0/policy.hcl")
+    source = file("cis_v1.2.0/policy.hcl")
   }
 }

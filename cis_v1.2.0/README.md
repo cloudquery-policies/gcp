@@ -9,5 +9,5 @@ See official GCP CIS guides on [cissecurity.org](https://www.cisecurity.org/benc
 ## Running
 
 ```bash
-cloudquery policy run gcp/cis_v1.2.0
+cloudquery policy run gcp//cis_v1.2.0
 ```

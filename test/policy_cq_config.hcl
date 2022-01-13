@@ -21,5 +21,5 @@ provider "gcp" {
 }
 
 policy "gcp-policy-pack" {
-  source = "./policy.hcl"
+  source = "./"
 }

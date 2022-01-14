@@ -55,5 +55,5 @@ cloudquery policy describe gcp
 cloudquery policy run gcp
 
 # Run specific policy
-cloudquery policy run aws gcp/cis-v1.2.0
+cloudquery policy run aws gcp//cis_v1.2.0
 ```

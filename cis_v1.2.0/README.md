@@ -1,6 +1,6 @@
 # GCP CIS v1.2.0
 
-This CloudQuery policy implements the AWS CIS v1.2.0 benchmark guidelines.
+This CloudQuery policy implements the GCP CIS v1.2.0 benchmark guidelines.
 
 ## Overview
 

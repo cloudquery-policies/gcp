@@ -36,7 +36,7 @@ brew install cloudquery/tap/cloudquery
 cloudquery init gcp
 ```
 
-3. [Fetch](https://hub.cloudquery.io/providers/cloudquery/aws/latest)
+3. [Fetch](https://hub.cloudquery.io/providers/cloudquery/gcp/latest)
 
 ```bash
 # connect or run  a local PostgreSQL
@@ -55,5 +55,5 @@ cloudquery policy describe gcp
 cloudquery policy run gcp
 
 # Run specific policy
-cloudquery policy run aws gcp/cis-v1.2.0
+cloudquery policy run gcp//cis_v1.2.0
 ```

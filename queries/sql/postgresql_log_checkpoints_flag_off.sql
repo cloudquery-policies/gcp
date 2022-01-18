@@ -1,6 +1,6 @@
-SELECT gsi.project_id, gsi.name, gsi.self_link as link
+SELECT gsi.project_id, gsi.name, gsi.self_link AS link
 FROM gcp_sql_instances gsi
 WHERE database_version LIKE 'POSTGRES%'
-AND (settings_database_flags IS NULL 
-    OR settings_database_flags ->> 'log_checkpoints' != 'on'
-    OR settings_database_flags ->> 'log_checkpoints' IS NULL);
+    AND (settings_database_flags IS NULL
+        OR settings_database_flags ->> 'log_checkpoints' != 'on'
+        OR settings_database_flags ->> 'log_checkpoints' IS NULL);

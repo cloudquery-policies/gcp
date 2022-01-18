@@ -1,4 +1,4 @@
-SELECT project_id , "role", "member"
+SELECT project_id, "role", "member"
 FROM gcp_project_policy_members
 WHERE "member" LIKE '%allUsers%'
-OR "member" LIKE '%allAuthenticatedUsers%';
+    OR "member" LIKE '%allAuthenticatedUsers%';

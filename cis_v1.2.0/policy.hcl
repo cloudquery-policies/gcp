@@ -140,57 +140,57 @@ policy "cis_v1.2.0" {
     check "2.4" {
       title         = "2.4 Ensure log metric filter and alerts exist for project ownership assignments/changes (Automated)"
       expect_output = true
-      query = file("queries/logging/project_ownership_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.4.md")
+      query         = file("queries/logging/project_ownership_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.4.md")
     }
 
     check "2.5" {
       title         = "2.5 Ensure that the log metric filter and alerts exist for Audit Configuration changes (Automated)"
       expect_output = true
-      query = file("queries/logging/audit_config_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.5.md")
+      query         = file("queries/logging/audit_config_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.5.md")
     }
 
     check "2.6" {
       title         = "2.6 Ensure that the log metric filter and alerts exist for Custom Role changes (Automated)"
       expect_output = true
-      query = file("queries/logging/custom_role_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.6.md")
+      query         = file("queries/logging/custom_role_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.6.md")
     }
 
     check "2.7" {
       title         = "2.7 Ensure that the log metric filter and alerts exist for VPC Network Firewall rule changes (Automated)"
       expect_output = true
-      query = file("queries/logging/vpc_firewall_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.7.md")
+      query         = file("queries/logging/vpc_firewall_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.7.md")
     }
 
     check "2.8" {
       title         = "2.8 Ensure that the log metric filter and alerts exist for VPC network route changes (Automated)"
       expect_output = true
-      query = file("queries/logging/vpc_route_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.8.md")
+      query         = file("queries/logging/vpc_route_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.8.md")
     }
 
     check "2.9" {
       title         = "2.9 Ensure that the log metric filter and alerts exist for VPC network changes (Automated)"
-      expect_output = true=
-      query = file("queries/logging/vpc_network_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.9.md")
+      expect_output = true =
+      query         = file("queries/logging/vpc_network_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.9.md")
     }
 
     check "2.10" {
       title         = "2.10 Ensure that the log metric filter and alerts exist for Cloud Storage IAM permission changes (Automated)"
       expect_output = true
-      query = file("queries/logging/storage_iam_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.10.md")
+      query         = file("queries/logging/storage_iam_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.10.md")
     }
 
     check "2.11" {
       title         = "2.11 Ensure that the log metric filter and alerts exist for SQL instance configuration changes (Automated)"
       expect_output = true
-      query = file("queries/logging/sql_instance_changes_without_log_metric_filter_alerts.sql")
-      doc   = file("cis_v1.2.0/docs/2.11.md")
+      query         = file("queries/logging/sql_instance_changes_without_log_metric_filter_alerts.sql")
+      doc           = file("cis_v1.2.0/docs/2.11.md")
     }
 
     check "2.12" {

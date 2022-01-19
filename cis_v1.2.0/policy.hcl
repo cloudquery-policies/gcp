@@ -174,7 +174,7 @@ policy "cis_v1.2.0" {
 
     check "2.9" {
       title         = "2.9 Ensure that the log metric filter and alerts exist for VPC network changes (Automated)"
-      expect_output = true =
+      expect_output = true
       query         = file("queries/logging/vpc_network_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.9.md")
     }

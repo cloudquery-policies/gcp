@@ -13,7 +13,7 @@ policy "cis_v1.2.0" {
     }
 
     check "1.1" {
-      title = "1.1 Ensure that corporate login credentials are used (Automated)"
+      title = "Ensure that corporate login credentials are used (Automated)"
       doc   = file("cis_v1.2.0/docs/1.1.md")
       query = <<EOF
       SELECT 'needs to list folders and organizations which is currently not supported'
@@ -21,61 +21,61 @@ policy "cis_v1.2.0" {
     }
 
     check "1.2" {
-      title = "1.2 Ensure that multi-factor authentication is enabled for all non-service accounts (Manual)"
+      title = "Ensure that multi-factor authentication is enabled for all non-service accounts (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.2.md")
     }
 
     check "1.3" {
-      title = "1.3 Ensure that Security Key Enforcement is enabled for all admin accounts (Manual)"
+      title = "Ensure that Security Key Enforcement is enabled for all admin accounts (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.3.md")
     }
 
     check "1.4" {
-      title = "1.4 Ensure that there are only GCP-managed service account keys for each service account (Automated)"
+      title = "Ensure that there are only GCP-managed service account keys for each service account (Automated)"
       query = file("queries/iam/managed_service_account_keys.sql")
       doc   = file("cis_v1.2.0/docs/1.4.md")
     }
 
     check "1.5" {
-      title = "1.5 Ensure that Service Account has no Admin privileges (Automated)"
+      title = "Ensure that Service Account has no Admin privileges (Automated)"
       query = file("queries/iam/service_account_admin_priv.sql")
       doc   = file("cis_v1.2.0/docs/1.5.md")
     }
 
     check "1.6" {
-      title = "1.6 Ensure that IAM users are not assigned the Service Account User or Service Account Token Creator roles at project level (Automated)"
+      title = "Ensure that IAM users are not assigned the Service Account User or Service Account Token Creator roles at project level (Automated)"
       query = file("queries/iam/users_with_service_account_token_creator_role.sql")
       doc   = file("cis_v1.2.0/docs/1.6.md")
     }
 
     check "1.7" {
-      title = "1.7 Ensure user-managed/external keys for service accounts are rotated every 90 days or less (Automated)"
+      title = "Ensure user-managed/external keys for service accounts are rotated every 90 days or less (Automated)"
       query = file("queries/iam/service_account_keys_not_rotated.sql")
       doc   = file("cis_v1.2.0/docs/1.7.md")
     }
 
     check "1.8" {
-      title = "1.8 Ensure that Separation of duties is enforced while assigning service account related roles to users (Automated)"
+      title = "Ensure that Separation of duties is enforced while assigning service account related roles to users (Automated)"
       query = file("queries/iam/seperation_of_duties.sql")
       doc   = file("cis_v1.2.0/docs/1.8.md")
     }
 
     check "1.9" {
-      title = "1.9 Ensure that Cloud KMS cryptokeys are not anonymously or publicly accessible (Automated)"
+      title = "Ensure that Cloud KMS cryptokeys are not anonymously or publicly accessible (Automated)"
       query = file("queries/kms/publicly_accessible.sql")
       doc   = file("cis_v1.2.0/docs/1.9.md")
     }
 
     check "1.10" {
-      title = "1.10 Ensure KMS encryption keys are rotated within a period of 90 days (Automated)"
+      title = "Ensure KMS encryption keys are rotated within a period of 90 days (Automated)"
       query = file("queries/kms/keys_not_rotated_within_90_days.sql")
       doc   = file("cis_v1.2.0/docs/1.10.md")
     }
 
     check "1.11" {
-      title = "1.11 Ensure that Separation of duties is enforced while assigning KMS related roles to users (Automated)"
+      title = "Ensure that Separation of duties is enforced while assigning KMS related roles to users (Automated)"
       doc   = file("cis_v1.2.0/docs/1.11.md")
       query = <<EOF
         SELECT project_id , "role", "member"
@@ -86,25 +86,25 @@ policy "cis_v1.2.0" {
     }
 
     check "1.12" {
-      title = "1.12 Ensure API keys are not created for a project (Manual)"
+      title = "Ensure API keys are not created for a project (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.12.md")
     }
 
     check "1.13" {
-      title = "1.13 Ensure API keys are restricted to use by only specified Hosts and Apps (Manual)"
+      title = "Ensure API keys are restricted to use by only specified Hosts and Apps (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.13.md")
     }
 
     check "1.14" {
-      title = "1.14 Ensure API keys are restricted to only APIs that application needs access (Manual)"
+      title = "Ensure API keys are restricted to only APIs that application needs access (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.14.md")
     }
 
     check "1.15" {
-      title = "1.15 Ensure API keys are rotated every 90 days (Manual)"
+      title = "Ensure API keys are rotated every 90 days (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/1.15.md")
     }
@@ -120,81 +120,81 @@ policy "cis_v1.2.0" {
     }
 
     check "2.1" {
-      title = "2.1 Ensure that Cloud Audit Logging is configured properly across all services and all users from a project (Automated)"
+      title = "Ensure that Cloud Audit Logging is configured properly across all services and all users from a project (Automated)"
       query = file("queries/logging/not_configured_across_services_and_users.sql")
       doc   = file("cis_v1.2.0/docs/2.1.md")
     }
 
     check "2.2" {
-      title = "2.2 Ensure that sinks are configured for all log entries (Automated)"
+      title = "Ensure that sinks are configured for all log entries (Automated)"
       query = file("queries/logging/sinks_not_configured_for_all_log_entries.sql")
       doc   = file("cis_v1.2.0/docs/2.2.md")
     }
 
     check "2.3" {
-      title = "2.3 Ensure that retention policies on log buckets are configured using Bucket Lock (Automated)"
+      title = "Ensure that retention policies on log buckets are configured using Bucket Lock (Automated)"
       query = file("queries/logging/log_buckets_retention_policy_disabled.sql")
       doc   = file("cis_v1.2.0/docs/2.3.md")
     }
 
     check "2.4" {
-      title         = "2.4 Ensure log metric filter and alerts exist for project ownership assignments/changes (Automated)"
+      title         = "Ensure log metric filter and alerts exist for project ownership assignments/changes (Automated)"
       expect_output = true
       query         = file("queries/logging/project_ownership_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.4.md")
     }
 
     check "2.5" {
-      title         = "2.5 Ensure that the log metric filter and alerts exist for Audit Configuration changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for Audit Configuration changes (Automated)"
       expect_output = true
       query         = file("queries/logging/audit_config_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.5.md")
     }
 
     check "2.6" {
-      title         = "2.6 Ensure that the log metric filter and alerts exist for Custom Role changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for Custom Role changes (Automated)"
       expect_output = true
       query         = file("queries/logging/custom_role_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.6.md")
     }
 
     check "2.7" {
-      title         = "2.7 Ensure that the log metric filter and alerts exist for VPC Network Firewall rule changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for VPC Network Firewall rule changes (Automated)"
       expect_output = true
       query         = file("queries/logging/vpc_firewall_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.7.md")
     }
 
     check "2.8" {
-      title         = "2.8 Ensure that the log metric filter and alerts exist for VPC network route changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for VPC network route changes (Automated)"
       expect_output = true
       query         = file("queries/logging/vpc_route_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.8.md")
     }
 
     check "2.9" {
-      title         = "2.9 Ensure that the log metric filter and alerts exist for VPC network changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for VPC network changes (Automated)"
       expect_output = true
       query         = file("queries/logging/vpc_network_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.9.md")
     }
 
     check "2.10" {
-      title         = "2.10 Ensure that the log metric filter and alerts exist for Cloud Storage IAM permission changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for Cloud Storage IAM permission changes (Automated)"
       expect_output = true
       query         = file("queries/logging/storage_iam_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.10.md")
     }
 
     check "2.11" {
-      title         = "2.11 Ensure that the log metric filter and alerts exist for SQL instance configuration changes (Automated)"
+      title         = "Ensure that the log metric filter and alerts exist for SQL instance configuration changes (Automated)"
       expect_output = true
       query         = file("queries/logging/sql_instance_changes_without_log_metric_filter_alerts.sql")
       doc           = file("cis_v1.2.0/docs/2.11.md")
     }
 
     check "2.12" {
-      title = "2.12 Ensure that Cloud DNS logging is enabled for all VPC networks (Automated)"
+      title = "Ensure that Cloud DNS logging is enabled for all VPC networks (Automated)"
       query = file("queries/logging/dns_logging_disabled.sql")
       doc   = file("cis_v1.2.0/docs/2.12.md")
     }
@@ -210,55 +210,55 @@ policy "cis_v1.2.0" {
     }
 
     check "3.1" {
-      title = "3.1 Ensure that the default network does not exist in a project (Automated)"
+      title = "Ensure that the default network does not exist in a project (Automated)"
       query = file("queries/compute/default_network_exist.sql")
       doc   = file("cis_v1.2.0/docs/3.1.md")
     }
 
     check "3.2" {
-      title = "3.2 Ensure legacy networks do not exist for a project (Automated)"
+      title = "Ensure legacy networks do not exist for a project (Automated)"
       query = file("queries/compute/legacy_network_exist.sql")
       doc   = file("cis_v1.2.0/docs/3.2.md")
     }
 
     check "3.3" {
-      title = "3.3 Ensure that DNSSEC is enabled for Cloud DNS (Automated)"
+      title = "Ensure that DNSSEC is enabled for Cloud DNS (Automated)"
       query = file("queries/compute/dnssec_disabled.sql")
       doc   = file("cis_v1.2.0/docs/3.3.md")
     }
 
     check "3.4" {
-      title = "3.4 Ensure that RSASHA1 is not used for the key-signing key in Cloud DNS DNSSEC (Manual)"
+      title = "Ensure that RSASHA1 is not used for the key-signing key in Cloud DNS DNSSEC (Manual)"
       query = file("queries/dns/key_signing_with_rsasha1.sql")
       doc   = file("cis_v1.2.0/docs/3.4.md")
     }
 
     check "3.5" {
-      title = "3.5 Ensure that RSASHA1 is not used for the zone-signing key in Cloud DNS DNSSEC (Manual)"
+      title = "Ensure that RSASHA1 is not used for the zone-signing key in Cloud DNS DNSSEC (Manual)"
       query = file("queries/dns/zone_signing_with_rsasha1.sql")
       doc   = file("cis_v1.2.0/docs/3.5.md")
     }
 
     check "3.6" {
-      title = "3.6 Ensure that SSH access is restricted from the internet (Automated)"
+      title = "Ensure that SSH access is restricted from the internet (Automated)"
       query = file("queries/compute/ssh_access_permitted.sql")
       doc   = file("cis_v1.2.0/docs/3.6.md")
     }
 
     check "3.7" {
-      title = "3.7 Ensure that RDP access is restricted from the Internet (Automated)"
+      title = "Ensure that RDP access is restricted from the Internet (Automated)"
       query = file("queries/compute/rdp_access_permitted.sql")
       doc   = file("cis_v1.2.0/docs/3.7.md")
     }
 
     check "3.8" {
-      title = "3.8 Ensure that VPC Flow Logs is enabled for every subnet in a VPC Network (Automated)"
+      title = "Ensure that VPC Flow Logs is enabled for every subnet in a VPC Network (Automated)"
       query = file("queries/compute/flow_logs_disabled_in_vpc.sql")
       doc   = file("cis_v1.2.0/docs/3.8.md")
     }
 
     check "3.9" {
-      title = "3.9 Ensure no HTTPS or SSL proxy load balancers permit SSL policies with weak cipher suites (Manual)"
+      title = "Ensure no HTTPS or SSL proxy load balancers permit SSL policies with weak cipher suites (Manual)"
       query = file("queries/compute/ssl_proxy_with_weak_cipher.sql")
       doc   = file("cis_v1.2.0/docs/3.9.md")
     }
@@ -275,68 +275,68 @@ policy "cis_v1.2.0" {
     doc   = file("cis_v1.2.0/docs/4.md")
 
     check "4.1" {
-      title = "4.1 Ensure that instances are not configured to use the default service account (Automated)"
+      title = "Ensure that instances are not configured to use the default service account (Automated)"
       query = file("queries/compute/instances_with_default_service_account.sql")
       doc   = file("cis_v1.2.0/docs/4.1.md")
     }
 
     check "4.2" {
-      title = "4.2 Ensure that instances are not configured to use the default service account with full access to all Cloud APIs (Automated)"
+      title = "Ensure that instances are not configured to use the default service account with full access to all Cloud APIs (Automated)"
       query = file("queries/compute/instances_with_default_service_account_with_full_access.sql")
       doc   = file("cis_v1.2.0/docs/4.2.md")
     }
 
     check "4.3" {
-      title = "4.3 Ensure 'Block Project-wide SSH keys' is enabled for VM instances (Automated)"
+      title = "Ensure 'Block Project-wide SSH keys' is enabled for VM instances (Automated)"
       query = file("queries/compute/instances_without_block_project_wide_ssh_keys.sql")
       doc   = file("cis_v1.2.0/docs/4.3.md")
     }
 
     check "4.4" {
-      title = "4.4 Ensure oslogin is enabled for a Project (Automated)"
+      title = "Ensure oslogin is enabled for a Project (Automated)"
       query = file("queries/compute/oslogin_disabled.sql")
       doc   = file("cis_v1.2.0/docs/4.4.md")
     }
 
     check "4.5" {
-      title = "4.5 Ensure 'Enable connecting to serial ports' is not enabled for VM Instance (Automated)"
+      title = "Ensure 'Enable connecting to serial ports' is not enabled for VM Instance (Automated)"
       query = file("queries/compute/serial_port_connection_enabled.sql")
       doc   = file("cis_v1.2.0/docs/4.5.md")
     }
 
     check "4.6" {
-      title = "4.6 Ensure that IP forwarding is not enabled on Instances (Automated)"
+      title = "Ensure that IP forwarding is not enabled on Instances (Automated)"
       query = file("queries/compute/instance_ip_forwarding_enabled.sql")
       doc   = file("cis_v1.2.0/docs/4.6.md")
     }
 
     check "4.7" {
-      title = "4.7 Ensure VM disks for critical VMs are encrypted with Customer-Supplied Encryption Keys (CSEK) (Automated)"
+      title = "Ensure VM disks for critical VMs are encrypted with Customer-Supplied Encryption Keys (CSEK) (Automated)"
       query = file("queries/compute/disks_encrypted_with_csek.sql")
       doc   = file("cis_v1.2.0/docs/4.7.md")
     }
 
 
     check "4.8" {
-      title = "4.8 Ensure Compute instances are launched with Shielded VM enabled (Automated)"
+      title = "Ensure Compute instances are launched with Shielded VM enabled (Automated)"
       query = file("queries/compute/instances_with_shielded_vm_disabled.sql")
       doc   = file("cis_v1.2.0/docs/4.8.md")
     }
 
     check "4.9" {
-      title = "4.9 Ensure that Compute instances do not have public IP addresses (Automated)"
+      title = "Ensure that Compute instances do not have public IP addresses (Automated)"
       query = file("queries/compute/instances_with_public_ip.sql")
       doc   = file("cis_v1.2.0/docs/4.9.md")
     }
 
     check "4.10" {
-      title = "4.10 Ensure that App Engine applications enforce HTTPS connections (Manual)"
+      title = "Ensure that App Engine applications enforce HTTPS connections (Manual)"
       query = file("queries/manual.sql")
       doc   = file("cis_v1.2.0/docs/4.10.md")
     }
 
     check "4.11" {
-      title = "4.11 Ensure that Compute instances have Confidential Computing enabled (Automated)"
+      title = "Ensure that Compute instances have Confidential Computing enabled (Automated)"
       query = file("queries/compute/instances_without_confidential_computing.sql")
       doc   = file("cis_v1.2.0/docs/4.11.md")
     }
@@ -352,13 +352,13 @@ policy "cis_v1.2.0" {
     }
 
     check "5.1" {
-      title = "5.1 Ensure that Cloud Storage bucket is not anonymously or publicly accessible (Automated)"
+      title = "Ensure that Cloud Storage bucket is not anonymously or publicly accessible (Automated)"
       query = file("queries/storage/buckets_publicly_accessible.sql")
       doc   = file("cis_v1.2.0/docs/5.1.md")
     }
 
     check "5.2" {
-      title = "5.2 Ensure that Cloud Storage buckets have uniform bucket-level access enabled (Automated)"
+      title = "Ensure that Cloud Storage buckets have uniform bucket-level access enabled (Automated)"
       query = file("queries/storage/buckets_without_uniform_bucket_level_access.sql")
       doc   = file("cis_v1.2.0/docs/5.2.md")
     }
@@ -525,25 +525,25 @@ policy "cis_v1.2.0" {
     }
 
     check "6.4" {
-      title = "6.4 Ensure that the Cloud SQL database instance requires all incoming connections to use SSL (Automated)"
+      title = "Ensure that the Cloud SQL database instance requires all incoming connections to use SSL (Automated)"
       query = file("queries/sql/db_instance_without_ssl.sql")
       doc   = file("cis_v1.2.0/docs/6.4.md")
     }
 
     check "6.5" {
-      title = "6.5 Ensure that Cloud SQL database instances are not open to the world (Automated)"
+      title = "Ensure that Cloud SQL database instances are not open to the world (Automated)"
       query = file("queries/sql/db_instance_publicly_accessible.sql")
       doc   = file("cis_v1.2.0/docs/6.5.md")
     }
 
     check "6.6" {
-      title = "6.6 Ensure that Cloud SQL database instances do not have public IPs (Automated)"
+      title = "Ensure that Cloud SQL database instances do not have public IPs (Automated)"
       query = file("queries/sql/db_instance_with_public_ip.sql")
       doc   = file("cis_v1.2.0/docs/6.6.md")
     }
 
     check "6.7" {
-      title = "6.7 Ensure that Cloud SQL database instances are configured with automated backups (Automated)"
+      title = "Ensure that Cloud SQL database instances are configured with automated backups (Automated)"
       query = file("queries/sql/db_instance_with_public_ip.sql")
       doc   = file("cis_v1.2.0/docs/6.7.md")
     }
@@ -554,19 +554,19 @@ policy "cis_v1.2.0" {
     doc   = file("cis_v1.2.0/docs/7.md")
 
     check "7.1" {
-      title = "7.1 Ensure that BigQuery datasets are not anonymously or publicly accessible (Automated)"
+      title = "Ensure that BigQuery datasets are not anonymously or publicly accessible (Automated)"
       query = file("queries/bigquery/datasets_publicly_accessible.sql")
       doc   = file("cis_v1.2.0/docs/7.1.md")
     }
 
     check "7.2" {
-      title = "7.2 Ensure that all BigQuery Tables are encrypted with Customer-managed encryption key (CMEK) (Automated)"
+      title = "Ensure that all BigQuery Tables are encrypted with Customer-managed encryption key (CMEK) (Automated)"
       query = file("queries/bigquery/tables_not_encrypted_with_cmek.sql")
       doc   = file("cis_v1.2.0/docs/7.2.md")
     }
 
     check "7.3" {
-      title = "7.3 Ensure that a Default Customer-managed encryption key (CMEK) is specified for all BigQuery Data Sets (Automated)"
+      title = "Ensure that a Default Customer-managed encryption key (CMEK) is specified for all BigQuery Data Sets (Automated)"
       query = file("queries/bigquery/datasets_without_default_cmek.sql")
       doc   = file("cis_v1.2.0/docs/7.3.md")
     }

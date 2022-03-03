@@ -4,7 +4,7 @@ cloudquery {
   policy_directory = "./cq/policies"
 
   provider "gcp" {
-    source  = "cloudquery/cq-provider-gcp"
+    source  = "cloudquery/gcp"
     version = "latest"
   }
 

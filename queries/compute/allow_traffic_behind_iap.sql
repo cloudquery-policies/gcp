@@ -6,5 +6,5 @@ WHERE
     NOT ARRAY [
         '35.191.0.0/16', '130.211.0.0/22'
     ] <@ gcf.source_ranges AND NOT (ip_protocol = 'tcp' AND ports @> ARRAY ['80'])
-GROUP BY gcf.project_id, gcf.id
+GROUP BY 1,2,3,4
 HAVING count(*) > 0;

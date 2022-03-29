@@ -10,5 +10,5 @@ FROM gcp_compute_instances gci
 WHERE gci."name" NOT LIKE 'gke-%'
     AND (gciniac.nat_ip IS NOT NULL
         OR gciniac.nat_ip != '')
-GROUP BY project_id, gci."id", gci.self_link
+GROUP BY 1,2,3
 HAVING count(gciniac.*) > 0; -- noqa

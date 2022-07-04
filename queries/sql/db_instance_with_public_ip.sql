@@ -1,4 +1,4 @@
-SELECT gsi.project_id, gsi.name, gsiia."type", gsi.self_link AS link
+SELECT gsi.project_id, gsi.id, gsiia."type", gsi.self_link AS link
 FROM gcp_sql_instances gsi
     JOIN gcp_sql_instance_ip_addresses gsiia ON
         gsi.cq_id = gsiia.instance_cq_id

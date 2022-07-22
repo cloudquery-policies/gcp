@@ -1,3 +1,7 @@
+------------
+This moved to https://github.com/cloudquery/cq-provider-aws/tree/main/policies
+------------
+
 # GCP Security & Compliance CloudQuery policy pack
 
 Official GCP security & compliance policy pack for CloudQuery.
